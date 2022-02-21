@@ -1,0 +1,55 @@
+<body>
+    <div class="formularioRegistro">
+        <h2>Crear Empleado</h2>
+        <form [formGroup]="empleadoForm" (ngSubmit)="guardar()">
+            <div class="form-group">
+                <label>Cedula</label>
+                <input type="number" formControlName="cedula" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Nombres</label>
+                <input type="text" formControlName="nombres" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Apellidos</label>
+                <input type="text" formControlName="apellidos" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Correo Electronico</label>
+                <input type="email" formControlName="email" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Rol</label>
+                <select name="rol" id="rol" formControlName="rol" class="form-control">
+                    <option [value]="item.tiporol" *ngFor="let item of roles">{{item.tiporol}}</option>
+
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Usuario</label>
+                <input type="text" formControlName="usuario" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Contraseña</label>
+                <input type="text" formControlName="contrasena" class="form-control">
+            </div>
+            <br>
+            <input type="submit" class="btn btn-primary" >
+
+
+        </form>
+
+    </div>
+
+</body>
+
+
+
+
+<router-outlet></router-outlet>
